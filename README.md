@@ -1,4 +1,19 @@
 # CSC-510-HW-1
-![GitHub](https://img.shields.io/github/license/TejasPrabhu/CSC-510-HW-1) ![GitHub top language](https://img.shields.io/github/languages/top/TejasPrabhu/CSC-510-HW-1) ![GitHub issues](https://img.shields.io/github/issues-raw/TejasPrabhu/CSC-510-HW-1) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/TejasPrabhu/CSC-510-HW-1) ![Lines of code](https://img.shields.io/tokei/lines/github/TejasPrabhu/CSC-510-HW-1) ![GitHub contributors](https://img.shields.io/github/contributors/TejasPrabhu/CSC-510-HW-1) ![GitHub repo size](https://img.shields.io/github/repo-size/TejasPrabhu/CSC-510-HW-1) 
+![GitHub](https://img.shields.io/github/license/TejasPrabhu/CSC-510-HW-1) ![GitHub top language](https://img.shields.io/github/languages/top/TejasPrabhu/CSC-510-HW-1) ![GitHub issues](https://img.shields.io/github/issues-raw/TejasPrabhu/CSC-510-HW-1) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/TejasPrabhu/CSC-510-HW-1) ![Lines of code](https://img.shields.io/tokei/lines/github/TejasPrabhu/CSC-510-HW-1) ![GitHub contributors](https://img.shields.io/github/contributors/TejasPrabhu/CSC-510-HW-1) ![GitHub repo size](https://img.shields.io/github/repo-size/TejasPrabhu/CSC-510-HW-1) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/TejasPrabhu/CSC-510-HW-1) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/TejasPrabhu/CSC-510-HW-1)
 ---
+# Introduction
 This is HW-1 repo for CSC-510(Software Engineering) for group-45
+# Steps for Execution
+# License
+This project is licensed under the terms of the MIT license. Please check [LICENSE](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/LICENSE) for more details.
+# Contributions
+Please see our [CONTRIBUTING.md]() for instructions on how to contribute to the project by completing some of the issues.
+# Contributors 
+(Group 45)
+- Tejas Prabhu
+- Kartik Rawool
+- Naveen Jayanna 
+- Samarth Purushothaman
+- Shubham Loya
+
+
