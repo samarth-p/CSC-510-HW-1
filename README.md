@@ -4,8 +4,7 @@
 ![Tests](https://github.com/TejasPrabhu/CSC-510-HW-1/actions/workflows/tests.yaml/badge.svg)
 ---
 ## Introduction
-This is HW-1 repo for CSC-510(Software Engineering) for group-45
-## Steps for Execution
+This is HW-1 repo for CSC-510(Software Engineering) for group-45. This is simple program to calculate the area of square.
 ## License
 This project is licensed under the terms of the MIT license. Please check [LICENSE](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/LICENSE) for more details.
 ## Contributions
