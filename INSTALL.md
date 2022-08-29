@@ -26,21 +26,17 @@ This document gives the instructions to install Python 3.10.6 [document](https:/
 
   
 
-You'll have to double-click on the `.exe` Installer.
+Open the `.exe` Installer.
 
-  
 
-You'll be requested to answer a few questions.
+Answer few questions.
 
-  
 
 * Press `Enter` to review the license.
 
-* Press `Space` several times to scroll through the license.
-
 * press `Enter`.
 
-* You'll be requested to choose the installation path. Set a path and press `Enter`.
+* Set an installation path and press `Enter`.
 
 * Congratulations! Python 3.10.6 is installed.
 
