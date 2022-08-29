@@ -1,8 +1,5 @@
-import sys
-sys.path.insert(0, '../code')
+from codebase.area import area_of_square
 
-from area import area_of_square
-
-def testarea():
+def test_area():
     side = 5
     assert area_of_square(side) == 25
