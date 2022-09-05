@@ -5,7 +5,7 @@ import math
 
 
 class the:
-    nums = 32
+    nums = 1000
 
 
 class library_functions:
@@ -18,7 +18,7 @@ class library_functions:
 
 class Num:
 
-    def __init__(self, c, s) -> None:
+    def __init__(self, c=None, s=None) -> None:
         self.n = 0
         self.at = c or 0
         self.s = s or ""
