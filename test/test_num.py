@@ -1,4 +1,5 @@
-from codebase.num import Num, the
+from codebase.num import Num
+from codebase.cli import the
 
 
 def test_num():
@@ -16,7 +17,7 @@ def test_num():
 
 def test_bignum():
     num = Num()
-    the.nums = 32
+    the['nums'] = 32
 
     for i in range(1, 1001):
         num.add(i)

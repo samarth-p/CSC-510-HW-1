@@ -2,14 +2,12 @@ import re
 import sys
 import random
 import math
+from codebase.cli import the
 
 
-class the:
-    nums = 1000
+class LibraryFunctions:
 
-
-class library_functions:
-
+    @staticmethod
     def per(t, p):
         p = math.floor(((p or 0.5) * len(t)) + 0.5)
 
@@ -18,7 +16,8 @@ class library_functions:
 
 class Num:
 
-    def __init__(self, c=None, s=None) -> None:
+    def __init__(self, c=0, s="") -> None:
+
         self.n = 0
         self.at = c or 0
         self.s = s or ""
@@ -38,26 +37,25 @@ class Num:
 
     def add(self, v):
 
-        pos = None
-
         if v != "?":
             self.n += 1
             self.lo = min(v, self.lo)
             self.hi = max(v, self.hi)
 
-            if len(self.has) < the.nums:
+            if len(self.has) < the["nums"]:
                 self.has.append(v)
                 self.is_sorted = False
 
-            elif random.random() < the.nums / self.n:
+            elif random.random() < the["nums"] / self.n:
                 pos = random.randint(0, len(self.has) - 1)
                 self.has[pos] = v
                 self.is_sorted = False
 
     def div(self):
+
         a = self.nums()
-        return (library_functions.per(a, 0.9) - library_functions.per(a, 0.1)) / 2.58
+        return (LibraryFunctions.per(a, 0.9) - LibraryFunctions.per(a, 0.1)) / 2.58
 
     def mid(self):
 
-        return library_functions.per(self.nums(), 0.5)
+        return LibraryFunctions.per(self.nums(), 0.5)
