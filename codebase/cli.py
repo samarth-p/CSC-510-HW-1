@@ -12,7 +12,7 @@ OPTIONS:
 -h --help show help = false
 -n --nums number of nums to keep = 512
 -s --seed random number seed = 10019
--S --seperator feild seperator = ,""" 
+-S --Seperator feild seperator = ,""" 
 
 
 def coerce(s):
@@ -46,7 +46,8 @@ def cli(t):
                     v= sys.argv[i+1]
         t[slot] = coerce(v)
     if t['help'] == True:
-        print("\n"+help+"\n")    
+        print("\n"+help+"\n")
+        sys.exit()    
     return t      
 
 # the = cli(the)
