@@ -48,3 +48,66 @@ class Tests:
     def test_the(self):
         print("List of config parameters : {}".format(the))
         return True
+
+
+def runs(test_name):
+    tests_obj = Tests()
+    list_of_tests = dict(inspect.getmembers(tests_obj, predicate=inspect.ismethod))
+
+    # Set the random seed from command-line
+    random.seed(the['seed'])
+
+    if test_name.lower() == "all":
+        tests_to_run = list_of_tests
+    elif test_name in list_of_tests.keys():
+        tests_to_run = dict([(test_name, list_of_tests.get(test_name))])
+    else:
+        print("Test '{}' not found".format(test_name))
+        return
+
+    passed_test = 0
+
+    # Save the initial values saved in 'the'
+    initial_the = the.copy()
+
+    for test_num, (test_name, test_function) in enumerate(tests_to_run.items(), start=1):
+
+        print("")
+        print("------------------------------")
+        print("Running Test #{} - {}".format(test_num, test_name))
+        print("------------------------------")
+
+        status = False
+
+        # Call the test function
+        try:
+            out = test_function()
+            status = True
+
+        except Exception as e:
+            out = e
+            if the['dump']:
+                print(traceback.format_exc())
+                sys.exit(1)
+
+        if out is True:
+            passed_test += 1
+
+        msg = status and ((out is True and "PASS") or "FAIL") or "CRASH"
+
+        print("------------------------------")
+        print("{} - Test #{} - {}".format(msg, test_num, test_name))
+        print("------------------------------")
+
+        # Restore initial value for 'the'
+        for k, _ in the.items():
+            the[k] = initial_the[k]
+
+    print("")
+    print("------------------------------")
+    print("Test Summary - {}/{} PASSED".format(passed_test, len(tests_to_run)))
+    print("------------------------------")
+
+
+# Run the test engine
+runs(the['eg'])
