@@ -9,6 +9,9 @@ class Sym():
         self.at = c
         self.name = s
         self._has = defaultdict(lambda: 0)
+    
+    def __repr__(self):
+        return f'at: {self.at}, n: {self.n}, name: {self.name}'
 
     def add(self, v):
         if v != '?':

@@ -4,6 +4,7 @@ import sys
 import traceback
 
 from codebase.cli import the
+from codebase.data import Data
 from codebase.num import Num
 from codebase.sym import Sym
 
@@ -47,6 +48,24 @@ class Tests:
 
     def test_the(self):
         print("List of config parameters : {}".format(the))
+        return True
+    
+    def test_data(self):
+        data = Data(r'..\data\auto93.csv')
+        for col in data.cols.y:
+            print(col)
+        return True
+
+    def test_stats(self):
+        data = Data(r'..\data\auto93.csv')
+        div = lambda col: col.div
+        mid = lambda col: col.mid
+
+        print("xmid", f"{data.stats(2, data.cols.x, mid)}")
+        print("xdiv", f"{data.stats(3, data.cols.x, div)}")
+        print("ymid", f"{data.stats(2, data.cols.y, mid)}")
+        print("ydiv", f"{data.stats(3, data.cols.y, div)}")
+
         return True
 
 

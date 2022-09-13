@@ -2,7 +2,7 @@ import re
 import sys
 import random
 import math
-from codebase.cli import the
+from cli import the
 
 
 class LibraryFunctions:
@@ -20,12 +20,12 @@ class Num:
 
         self.n = 0
         self.at = c or 0
-        self.s = s or ""
+        self.name = s or ""
         self.has = []
         self.lo = sys.maxsize * 2 + 1
         self.hi = - sys.maxsize * 2 + 1
         self.is_sorted = True
-        self.w = -1 if re.search("-$", self.s) else 1
+        self.w = -1 if re.search("-$", self.name) else 1
 
     def nums(self):
 
@@ -34,6 +34,9 @@ class Num:
             self.is_sorted = True
 
         return self.has
+    
+    def __str__(self):
+        return f'at: {self.at}, hi: {self.hi}, isSorted: {self.is_sorted}, lo: {self.lo}, n: {self.n}, name: {self.name}, w: {self.w}'
 
     def add(self, v):
 
