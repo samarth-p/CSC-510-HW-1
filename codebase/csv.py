@@ -1,5 +1,5 @@
-from cli import the
-from cli import coerce
+from codebase.cli import the
+from codebase.cli import coerce
 import os
 
 def csv(fname, func):
