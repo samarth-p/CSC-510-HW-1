@@ -7,8 +7,8 @@ from codebase.cli import the
 from codebase.data import Data
 from codebase.num import Num
 from codebase.sym import Sym
-
-
+from codebase.csv import csv
+n = 0
 class Tests:
 
     def test_num(self):
@@ -68,6 +68,16 @@ class Tests:
 
         return True
 
+    def test_csv(self):        
+        def fun(row):
+            global n
+            n = n + 1
+            if n > 10:
+                return
+            else:
+                print(row)# oo(row) yet to implement
+        csv("../data/auto93.csv", fun)
+        return True
 
 def runs(test_name):
     tests_obj = Tests()

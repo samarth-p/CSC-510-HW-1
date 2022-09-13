@@ -15,6 +15,12 @@ OPTIONS:
 -s --seed random number seed = 10019
 -S --Seperator field seperator = ,"""
 
+def is_float(str):
+    try:
+        float(str)
+        return True
+    except ValueError:
+        return False
 
 def coerce(s):
     def fun(s1):
@@ -26,6 +32,8 @@ def coerce(s):
 
     if s.isdigit():
         return int(s)
+    elif is_float(s):
+        return float(s)
     elif re.fullmatch(r'[^\n]+', s):
         return fun(s)
 
