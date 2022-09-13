@@ -2,13 +2,16 @@ import math
 from collections import defaultdict
 
 
-class Sym():
+class Sym:
 
     def __init__(self, c=0, s=''):
         self.n = 0
         self.at = c
         self.name = s
         self._has = defaultdict(lambda: 0)
+    
+    def __repr__(self):
+        return f'at: {self.at}, n: {self.n}, name: {self.name}'
 
     def add(self, v):
         if v != '?':

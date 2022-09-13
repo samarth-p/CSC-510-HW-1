@@ -12,7 +12,7 @@ class Cols:
         self.klass = None
         self.x = []
         self.y = []
-        print(names)
+
         for c, s in enumerate(self.names):
             if re.match("^[A-Z]+", s):
                 col = Num(c, s)
@@ -25,4 +25,4 @@ class Cols:
                 else:
                     self.x.append(col)
                 if re.search("!$", s):
-                    self.klass=col
+                    self.klass = col
