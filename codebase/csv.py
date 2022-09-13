@@ -23,10 +23,4 @@ def csv(fname, func):
 
 
 
-def test_csv():
-    def fun(row):
-        print(row[:10])# oo(row) yet to implement
-    csv("../data/auto93.csv", fun)
-    return True
 
-test_csv()
