@@ -1,6 +1,7 @@
 from codebase.cli import the
 from codebase.cli import coerce
 import os
+n = 0
 
 def csv(fname, func):
     script_path = os.path.abspath(__file__) 
@@ -9,18 +10,15 @@ def csv(fname, func):
     abs_file_path = os.path.join(script_dir, rel_path)
     sep = the["Seperator"]
     with open(abs_file_path, 'r') as f:
-        t = []
+        
         for line in f:
+            t = []
             words = line.rstrip('\n').split(sep)
-            words_list = []
             for word in words:
                 w = coerce(word)
-                words_list.append(w)
-            t.append(words_list[0:])
+                t.append(w)
+            func(t)
         
-        func(t)
-
-
 
 
 
