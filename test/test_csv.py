@@ -7,7 +7,7 @@ from codebase.cli import the
 from codebase.num import Num
 from codebase.sym import Sym
 from codebase.csv import csv
-
+n = 0
 class Tests:
 
     def test_num(self):
@@ -48,7 +48,7 @@ class Tests:
     def test_the(self):
         print("List of config parameters : {}".format(the))
         return True
-    n = 0
+
     def test_csv(self):        
         def fun(row):
             global n
