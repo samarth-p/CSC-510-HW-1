@@ -49,7 +49,7 @@ class Tests:
         print("List of config parameters : {}".format(the))
         return True
 
-    def test_csv():
+    def test_csv(self):
         def fun(row):
             print(row[:10])# oo(row) yet to implement
         csv("../data/auto93.csv", fun)
