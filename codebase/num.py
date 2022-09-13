@@ -2,7 +2,7 @@ import re
 import sys
 import random
 import math
-from cli import the
+from .cli import the
 
 
 class LibraryFunctions:
@@ -36,7 +36,8 @@ class Num:
         return self.has
     
     def __str__(self):
-        return f'at: {self.at}, hi: {self.hi}, isSorted: {self.is_sorted}, lo: {self.lo}, n: {self.n}, name: {self.name}, w: {self.w}'
+        return f'at: {self.at}, hi: {self.hi}, isSorted: {self.is_sorted}, lo: {self.lo}, n: {self.n}, ' \
+               f'name: {self.name}, w: {self.w}'
 
     def add(self, v):
 

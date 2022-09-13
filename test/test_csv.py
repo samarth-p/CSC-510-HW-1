@@ -4,11 +4,14 @@ import sys
 import traceback
 
 from codebase.cli import the
+from codebase.csv import csv
 from codebase.data import Data
 from codebase.num import Num
 from codebase.sym import Sym
-from codebase.csv import csv
+
 n = 0
+
+
 class Tests:
 
     def test_num(self):
@@ -51,13 +54,15 @@ class Tests:
         return True
     
     def test_data(self):
-        data = Data(r'..\data\auto93.csv')
+        data = Data(the['file'])
+
         for col in data.cols.y:
             print(col)
+
         return True
 
     def test_stats(self):
-        data = Data(r'..\data\auto93.csv')
+        data = Data(the['file'])
         div = lambda col: col.div
         mid = lambda col: col.mid
 
@@ -68,16 +73,19 @@ class Tests:
 
         return True
 
-    def test_csv(self):        
+    def test_csv(self):
+
         def fun(row):
             global n
             n = n + 1
             if n > 10:
                 return
             else:
-                print(row)# oo(row) yet to implement
-        csv("../data/auto93.csv", fun)
+                print(row)
+        csv(the['file'], fun)
+
         return True
+
 
 def runs(test_name):
     tests_obj = Tests()

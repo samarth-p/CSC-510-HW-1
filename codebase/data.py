@@ -1,10 +1,6 @@
-import re
-import string
-from num import Num
-from row import Row
-from sym import Sym
-from cols import Cols
-from csv import csv
+from .cols import Cols
+from .csv import csv
+from .row import Row
 
 
 class Data:
@@ -16,7 +12,6 @@ class Data:
         else:
             for row in src:
                 self.add(row)
-        return
     
     def add(self, xs):
         if not self.cols:

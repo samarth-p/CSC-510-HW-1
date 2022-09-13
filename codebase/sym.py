@@ -2,7 +2,7 @@ import math
 from collections import defaultdict
 
 
-class Sym():
+class Sym:
 
     def __init__(self, c=0, s=''):
         self.n = 0
