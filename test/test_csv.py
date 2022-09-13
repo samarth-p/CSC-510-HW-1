@@ -49,7 +49,7 @@ class Tests:
         print("List of config parameters : {}".format(the))
         return True
 
-    def test_csv():        
+    def test_csv(self):        
         def fun(row):
             global n
             n = n + 1
