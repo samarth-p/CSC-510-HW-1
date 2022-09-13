@@ -48,7 +48,7 @@ class Tests:
     def test_the(self):
         print("List of config parameters : {}".format(the))
         return True
-
+    n = 0
     def test_csv(self):        
         def fun(row):
             global n

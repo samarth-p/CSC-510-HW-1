@@ -1,7 +1,7 @@
 from codebase.cli import the
 from codebase.cli import coerce
 import os
-n = 0
+
 
 def csv(fname, func):
     script_path = os.path.abspath(__file__) 
@@ -18,7 +18,7 @@ def csv(fname, func):
                 w = coerce(word)
                 t.append(w)
             func(t)
-        
+   
 
 
 
