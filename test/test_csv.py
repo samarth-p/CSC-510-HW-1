@@ -145,6 +145,9 @@ def runs(test_name):
     print("Test Summary - {}/{} PASSED".format(passed_test, len(tests_to_run)))
     print("------------------------------")
 
+    if passed_test != len(tests_to_run):
+        sys.exit(1)
+
 
 # Run the test engine
 runs(the['eg'])
