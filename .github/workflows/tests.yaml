@@ -25,4 +25,4 @@ jobs:
           pip install -e .
       - name: Run all test cases
         run: |
-          python test\test_csv.py -e ALL
+          python test/test_csv.py -e ALL
