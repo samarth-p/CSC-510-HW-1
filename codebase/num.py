@@ -15,6 +15,9 @@ class LibraryFunctions:
 
 
 class Num:
+    """
+    This is num class to summarize the numbers.
+    """
 
     def __init__(self, c=0, s="") -> None:
 
@@ -40,7 +43,9 @@ class Num:
                f'name: {self.name}, w: {self.w}'
 
     def add(self, v):
-
+        '''
+        Add a new number to the numbers. 
+        '''
         if v != "?":
             self.n += 1
             self.lo = min(v, self.lo)
@@ -56,10 +61,14 @@ class Num:
                 self.is_sorted = False
 
     def div(self):
-
+        '''
+        Returns diversity of the numbers.
+        '''
         a = self.nums()
         return (LibraryFunctions.per(a, 0.9) - LibraryFunctions.per(a, 0.1)) / 2.58
 
     def mid(self):
-
+        '''
+        Returns middle of the number.
+        '''
         return LibraryFunctions.per(self.nums(), 0.5)
