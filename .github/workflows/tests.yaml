@@ -28,7 +28,6 @@ jobs:
           python test/test_csv.py -e ALL
       - name: Generate Report
         run: |
-          pip install coverage
-          coverage run -m unittest
+          coverage run test/test_csv.py -e ALL
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
