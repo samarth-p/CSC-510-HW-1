@@ -26,3 +26,8 @@ jobs:
       - name: Run all test cases
         run: |
           python test/test_csv.py -e ALL
+      - name: Generate Report
+        run: |
+          coverage run test/test_csv.py -e ALL
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v2
