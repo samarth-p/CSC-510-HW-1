@@ -10,6 +10,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/TejasPrabhu/CSC-510-HW-1)](https://github.com/TejasPrabhu/CSC-510-HW-1/pulls?q=is%3Aopen+is%3Apr)
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/TejasPrabhu/CSC-510-HW-1)](https://github.com/TejasPrabhu/CSC-510-HW-1/pulls?q=is%3Apr+is%3Aclosed)
 [![Tests](https://github.com/TejasPrabhu/CSC-510-HW-1/actions/workflows/tests.yaml/badge.svg)](https://github.com/TejasPrabhu/CSC-510-HW-1/actions/workflows/tests.yaml)
+[![codecov](https://codecov.io/gh/TejasPrabhu/CSC-510-HW-1/branch/main/graph/badge.svg)](https://codecov.io/gh/TejasPrabhu/CSC-510-HW-1)
 ---
 ## Introduction
 This is HW-1 repo for CSC-510(Software Engineering) for group-45. This is simple program to calculate the area of square.
