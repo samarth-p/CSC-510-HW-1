@@ -52,7 +52,7 @@ class Tests:
     def test_the(self):
         print("List of config parameters : {}".format(the))
         return True
-    
+
     def test_data(self):
         data = Data(the['file'])
 
@@ -63,8 +63,12 @@ class Tests:
 
     def test_stats(self):
         data = Data(the['file'])
-        div = lambda col: col.div
-        mid = lambda col: col.mid
+
+        def div(col):
+            return col.div
+
+        def mid(col):
+            return col.mid
 
         print("xmid", f"{data.stats(2, data.cols.x, mid)}")
         print("xdiv", f"{data.stats(3, data.cols.x, div)}")
@@ -82,6 +86,7 @@ class Tests:
                 return
             else:
                 print(row)
+
         csv(the['file'], fun)
 
         return True
@@ -89,7 +94,8 @@ class Tests:
 
 def runs(test_name):
     tests_obj = Tests()
-    list_of_tests = dict(inspect.getmembers(tests_obj, predicate=inspect.ismethod))
+    list_of_tests = dict(inspect.getmembers(tests_obj,
+                                            predicate=inspect.ismethod))
 
     # Set the random seed from command-line
     random.seed(the['seed'])
@@ -107,7 +113,8 @@ def runs(test_name):
     # Save the initial values saved in 'the'
     initial_the = the.copy()
 
-    for test_num, (test_name, test_function) in enumerate(tests_to_run.items(), start=1):
+    for test_num, (test_name, test_function) in \
+            enumerate(tests_to_run.items(), start=1):
 
         print("")
         print("------------------------------")

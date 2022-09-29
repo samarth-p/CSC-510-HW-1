@@ -37,15 +37,15 @@ class Num:
             self.is_sorted = True
 
         return self.has
-    
+
     def __str__(self):
-        return f'at: {self.at}, hi: {self.hi}, isSorted: {self.is_sorted}, lo: {self.lo}, n: {self.n}, ' \
-               f'name: {self.name}, w: {self.w}'
+        return f'at: {self.at}, hi: {self.hi}, isSorted: {self.is_sorted}, ' \
+               f'lo: {self.lo}, n: {self.n}, name: ''{self.name}, w: {self.w}'
 
     def add(self, v):
-        '''
-        Add a new number to the numbers. 
-        '''
+        """
+        Add a new number to the numbers.
+        """
         if v != "?":
             self.n += 1
             self.lo = min(v, self.lo)
@@ -61,14 +61,15 @@ class Num:
                 self.is_sorted = False
 
     def div(self):
-        '''
+        """
         Returns diversity of the numbers.
-        '''
+        """
         a = self.nums()
-        return (LibraryFunctions.per(a, 0.9) - LibraryFunctions.per(a, 0.1)) / 2.58
+        x = LibraryFunctions.per(a, 0.9) - LibraryFunctions.per(a, 0.1)
+        return x / 2.58
 
     def mid(self):
-        '''
+        """
         Returns middle of the number.
-        '''
+        """
         return LibraryFunctions.per(self.nums(), 0.5)

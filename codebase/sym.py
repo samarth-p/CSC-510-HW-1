@@ -9,7 +9,7 @@ class Sym:
         self.at = c
         self.name = s
         self._has = defaultdict(lambda: 0)
-    
+
     def __repr__(self):
         return f'at: {self.at}, n: {self.n}, name: {self.name}'
 
@@ -27,6 +27,7 @@ class Sym:
 
     def mid(self):
         most = -1
+        mode = 0
         for k, v in self._has.items():
             if v > most:
                 mode, most = k, v

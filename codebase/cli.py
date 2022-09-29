@@ -15,12 +15,14 @@ OPTIONS:
 -s --seed random number seed = 10019
 -S --Seperator field seperator = ,"""
 
+
 def is_float(str):
     try:
         float(str)
         return True
     except ValueError:
         return False
+
 
 def coerce(s):
     def fun(s1):
@@ -56,7 +58,7 @@ def cli(t):
                 else:
                     v = sys.argv[i + 1]
         t[slot] = coerce(v)
-    if t['help'] == True:
+    if t['help'] is True:
         print("\n" + help + "\n")
         sys.exit()
     return t
