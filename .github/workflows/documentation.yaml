@@ -45,3 +45,9 @@ jobs:
           sudo apt-get install python3-sphinx
           sphinx-apidoc -o . ../codebase/
           make html
+          cd ..
+          git config --global user.name "TejasPrabhu"
+          git config --global user.email "tejas.prabhu29n@gmail.com"
+          git add .
+          git commit -m "Update documentation" -a || true
+          git push
