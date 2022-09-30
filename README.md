@@ -1,5 +1,5 @@
 # CSC-510-HW-1
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7032785.svg)](https://doi.org/10.5281/zenodo.7032785)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7129238.svg)](https://doi.org/10.5281/zenodo.7129238)
 [![GitHub](https://img.shields.io/github/license/TejasPrabhu/CSC-510-HW-1)](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/LICENSE)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub issues](https://img.shields.io/github/issues-raw/TejasPrabhu/CSC-510-HW-1)](https://github.com/TejasPrabhu/CSC-510-HW-1/issues?q=is%3Aopen+is%3Aissue)
