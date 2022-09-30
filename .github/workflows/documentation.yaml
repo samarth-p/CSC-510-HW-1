@@ -1,23 +1,50 @@
+# name: Docs
+# on: [push, pull_request]
+# jobs:
+#   docs:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-python@v2
+#       - name: Install dependencies
+#         run: |
+#           pip install sphinx sphinx_rtd_theme
+#       - name: Sphinx build
+#         run: |
+#           make -C docs clean
+#           make -C docs html
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+#         with:
+#           publish_branch: gh-pages
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: _build/
+#           force_orphan: true
+
 name: Docs
-on: [push, pull_request]
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+
 jobs:
-  docs:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - name: Install dependencies
-        run: |
-          pip install sphinx sphinx_rtd_theme
-      - name: Sphinx build
-        run: |
-          make -C docs clean
-          make -C docs html
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        with:
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+    - uses: actions/checkout@v2
+    - name: Build documentation and commit
+      run: |
+          git pull
+          cd docs/
+          sudo apt-get install python3-sphinx
+          sudo rm code.rst
+          sudo rm modules.rst
+          sphinx-apidoc -o . ../code/
+          make html
