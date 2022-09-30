@@ -24,7 +24,7 @@ Repository reviewed </b> : [repo](https://github.com/ShiveshJha12/SE_group28_HW2
 |Other automated analysis tools| 0 | No automated analysis tools. |
 |Test cases exist| 3 | [tests](https://github.com/ShiveshJha12/SE_group28_HW2/tree/main/test)
 |Test cases are routinely executed| 2 | The test cases are being executed inside actions but through pytest not through a custom test engine. |
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 1 | [file]https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/CONTRIBUTING.md) Precise intructions for contributing can be added.
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 1 | [file](https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/CONTRIBUTING.md) Precise intructions for contributing can be added.
 |Issues are discussed before they are closed| 0 | No issues created.
 |Chat channel: exists| 0 | No chat channel link provided. |
 |Test cases: a large proportion of the issues related to handling failing cases.|3| Looking at the history of commits the team has handled this well |
