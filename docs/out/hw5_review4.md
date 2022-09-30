@@ -1,6 +1,6 @@
 ## Review 4
 
-<b> Reviewer </b>: Shubham Loya (kartikrawool)
+<b> Reviewer </b>: Shubham Loya (crmgogo)
 <b> Repository reviewed </b> : [repo](https://github.com/kartikson1/Group3-CSC510-HW2345)
 
 |Notes|Score(41)| Evidence|
