@@ -13,7 +13,7 @@
 [![codecov](https://codecov.io/gh/TejasPrabhu/CSC-510-HW-1/branch/main/graph/badge.svg)](https://codecov.io/gh/TejasPrabhu/CSC-510-HW-1)
 ---
 ## Introduction
-This is HW-1 repo for CSC-510(Software Engineering) for group-45. This is simple program to calculate the area of square.
+This is a HW repo for CSC-510(Software Engineering) for group-45. This is simple program to summarize a csv file which was converted from lua languageU.
 ## License
 This project is licensed under the terms of the MIT license. Please check [LICENSE](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/LICENSE) for more details.
 ## Contributions
