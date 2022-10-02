@@ -10,9 +10,6 @@ Welcome to Numerical Analysis(Lua to Python)'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   codebase
-   test
-
 
 Indices and tables
 ==================
