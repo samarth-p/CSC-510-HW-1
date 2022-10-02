@@ -22,32 +22,32 @@
 #           publish_dir: _build/
 #           force_orphan: true
 
-name: Docs
+#name: Docs
 
-on:
-  push:
-    branches: 
-      - main
-  pull_request:
-    branches: 
-      - main
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build documentation and commit
-      run: |
-          cd docs/
-          sudo apt-get install python3-sphinx
-          sphinx-apidoc -o . ../codebase/
-          make html
-          cd ..
-          git config --global user.name "TejasPrabhu"
-          git config --global user.email "tejas.prabhu29n@gmail.com"
-          git add .
-          git commit -m "Update documentation" -a || true
-          git push
+#on:
+#  push:
+#    branches: 
+#      - main
+#  pull_request:
+#    branches: 
+#      - main
+#
+#jobs:
+#  build:
+#
+#   runs-on: ubuntu-latest
+#
+#   steps:
+#    - uses: actions/checkout@v2
+#    - name: Build documentation and commit
+#      run: |
+#          cd docs/
+#         sudo apt-get install python3-sphinx
+#          sphinx-apidoc -o . ../codebase/
+#          make html
+#          cd ..
+#          git config --global user.name "TejasPrabhu"
+#          git config --global user.email "tejas.prabhu29n@gmail.com"
+#          git add .
+#          git commit -m "Update documentation" -a || true
+#          git push
