@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test.test_csv &#8212; Numerical Analysis(Lua to Python) 1.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Numerical Analysis(Lua to Python) 1.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test.test_csv</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for test.test_csv</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="kn">from</span> <span class="nn">codebase.cli</span> <span class="kn">import</span> <span class="n">the</span>
+<span class="kn">from</span> <span class="nn">codebase.csv</span> <span class="kn">import</span> <span class="n">csv</span>
+<span class="kn">from</span> <span class="nn">codebase.data</span> <span class="kn">import</span> <span class="n">Data</span>
+<span class="kn">from</span> <span class="nn">codebase.num</span> <span class="kn">import</span> <span class="n">Num</span>
+<span class="kn">from</span> <span class="nn">codebase.sym</span> <span class="kn">import</span> <span class="n">Sym</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<div class="viewcode-block" id="Tests"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests">[docs]</a><span class="k">class</span> <span class="nc">Tests</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Tests.test_num"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_num">[docs]</a>    <span class="k">def</span> <span class="nf">test_num</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">num</span> <span class="o">=</span> <span class="n">Num</span><span class="p">()</span>
+        <span class="n">the</span><span class="p">[</span><span class="s1">&#39;nums&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+            <span class="n">num</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="n">mid</span><span class="p">,</span> <span class="n">div</span> <span class="o">=</span> <span class="n">num</span><span class="o">.</span><span class="n">mid</span><span class="p">(),</span> <span class="n">num</span><span class="o">.</span><span class="n">div</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of numbers : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">nums</span><span class="p">()))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mid</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">div</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">50</span> <span class="o">&lt;=</span> <span class="n">mid</span> <span class="o">&lt;=</span> <span class="mi">52</span> <span class="ow">and</span> <span class="mf">30.5</span> <span class="o">&lt;</span> <span class="n">div</span> <span class="o">&lt;</span> <span class="mi">32</span></div>
+
+<div class="viewcode-block" id="Tests.test_bignum"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_bignum">[docs]</a>    <span class="k">def</span> <span class="nf">test_bignum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">Num</span><span class="p">()</span>
+        <span class="n">the</span><span class="p">[</span><span class="s1">&#39;nums&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>
+            <span class="n">num</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of numbers : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">nums</span><span class="p">()))</span>
+        <span class="k">return</span> <span class="mi">32</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">has</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Tests.test_sym"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_sym">[docs]</a>    <span class="k">def</span> <span class="nf">test_sym</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sym</span> <span class="o">=</span> <span class="n">Sym</span><span class="p">()</span>
+        <span class="n">sample_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sample_list</span><span class="p">:</span>
+            <span class="n">sym</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">mode</span><span class="p">,</span> <span class="n">entropy</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">mid</span><span class="p">(),</span> <span class="n">sym</span><span class="o">.</span><span class="n">div</span><span class="p">()</span>
+        <span class="n">entropy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">entropy</span><span class="p">)</span> <span class="o">//</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mode : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entropy : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entropy</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="mf">1.37</span> <span class="o">&lt;=</span> <span class="n">entropy</span> <span class="o">&lt;=</span> <span class="mf">1.38</span></div>
+
+<div class="viewcode-block" id="Tests.test_the"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_the">[docs]</a>    <span class="k">def</span> <span class="nf">test_the</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of config parameters : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">the</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Tests.test_data"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_data">[docs]</a>    <span class="k">def</span> <span class="nf">test_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">the</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Tests.test_stats"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_stats">[docs]</a>    <span class="k">def</span> <span class="nf">test_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">the</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
+
+        <span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">col</span><span class="o">.</span><span class="n">div</span>
+
+        <span class="k">def</span> <span class="nf">mid</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">col</span><span class="o">.</span><span class="n">mid</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;xmid&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;xdiv&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">div</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ymid&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ydiv&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">div</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Tests.test_csv"><a class="viewcode-back" href="../../test.html#test.test_csv.Tests.test_csv">[docs]</a>    <span class="k">def</span> <span class="nf">test_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="k">global</span> <span class="n">n</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="n">csv</span><span class="p">(</span><span class="n">the</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">],</span> <span class="n">fun</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div></div>
+
+
+<div class="viewcode-block" id="runs"><a class="viewcode-back" href="../../test.html#test.test_csv.runs">[docs]</a><span class="k">def</span> <span class="nf">runs</span><span class="p">(</span><span class="n">test_name</span><span class="p">):</span>
+    <span class="n">tests_obj</span> <span class="o">=</span> <span class="n">Tests</span><span class="p">()</span>
+    <span class="n">list_of_tests</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">tests_obj</span><span class="p">,</span>
+                                            <span class="n">predicate</span><span class="o">=</span><span class="n">inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">))</span>
+
+    <span class="c1"># Set the random seed from command-line</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">the</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">test_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+        <span class="n">tests_to_run</span> <span class="o">=</span> <span class="n">list_of_tests</span>
+    <span class="k">elif</span> <span class="n">test_name</span> <span class="ow">in</span> <span class="n">list_of_tests</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">tests_to_run</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">test_name</span><span class="p">,</span> <span class="n">list_of_tests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">test_name</span><span class="p">))])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test &#39;</span><span class="si">{}</span><span class="s2">&#39; not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_name</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="n">passed_test</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Save the initial values saved in &#39;the&#39;</span>
+    <span class="n">initial_the</span> <span class="o">=</span> <span class="n">the</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">test_num</span><span class="p">,</span> <span class="p">(</span><span class="n">test_name</span><span class="p">,</span> <span class="n">test_function</span><span class="p">)</span> <span class="ow">in</span> \
+            <span class="nb">enumerate</span><span class="p">(</span><span class="n">tests_to_run</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running Test #</span><span class="si">{}</span><span class="s2"> - </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_num</span><span class="p">,</span> <span class="n">test_name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+
+        <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Call the test function</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">test_function</span><span class="p">()</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">e</span>
+            <span class="k">if</span> <span class="n">the</span><span class="p">[</span><span class="s1">&#39;dump&#39;</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">passed_test</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">status</span> <span class="ow">and</span> <span class="p">((</span><span class="n">out</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="s2">&quot;PASS&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;FAIL&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;CRASH&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> - Test #</span><span class="si">{}</span><span class="s2"> - </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">test_num</span><span class="p">,</span> <span class="n">test_name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Restore initial value for &#39;the&#39;</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">the</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">the</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial_the</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test Summary - </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> PASSED&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">passed_test</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tests_to_run</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">passed_test</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tests_to_run</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<span class="c1"># Run the test engine</span>
+<span class="n">runs</span><span class="p">(</span><span class="n">the</span><span class="p">[</span><span class="s1">&#39;eg&#39;</span><span class="p">])</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Numerical Analysis(Lua to Python) 1.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test.test_csv</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Kartik Rawool, Naveen Jayanna, Samarth Purushothaman, Shubham Loya, Tejas Prabhu.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+    </div>
+  </body>
+</html>
