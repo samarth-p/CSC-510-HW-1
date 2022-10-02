@@ -18,6 +18,8 @@ This is a HW repo for CSC-510(Software Engineering) for group-45. This is simple
 This project is licensed under the terms of the MIT license. Please check [LICENSE](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/LICENSE) for more details.
 ## Contributions
 Please see our [CONTRIBUTING.md](https://github.com/TejasPrabhu/CSC-510-HW-1/blob/main/CONTRIBUTING.md) for instructions on how to contribute to the project by completing some of the issues.
+## Documentation
+Help yourself by referring to https://tejasprabhu.github.io/CSC-510-HW-1/
 ## Contributors 
 (Group 45)
 - Tejas Prabhu
