@@ -10,7 +10,6 @@ def csv(fname, func):
     abs_file_path = os.path.join(script_dir, rel_path)
     sep = the["Seperator"]
     with open(abs_file_path, 'r') as f:
-
         for line in f:
             t = []
             words = line.rstrip('\n').split(sep)

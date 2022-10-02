@@ -1,7 +1,7 @@
-codebase
-========
+test
+====
 
 .. toctree::
    :maxdepth: 4
 
-   codebase
+   test
